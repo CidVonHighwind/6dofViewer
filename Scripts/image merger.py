@@ -24,7 +24,7 @@ def main():
         sys.exit(1)
 
     folderPath = sys.argv[1]
-    folderPathOut = folderPath + "\\out\\"
+    folderPathOut = folderPath + "\\merge\\"
 
     # create output folder
     if not os.path.exists(folderPathOut):
@@ -45,7 +45,7 @@ def main():
         )
         fileInfos.append(fileInfo)
 
-    for number in range(1, 38):
+    for number in range(1, 100):
         merge_images(folderPathOut, fileInfos, number)
 
     end = time.perf_counter()

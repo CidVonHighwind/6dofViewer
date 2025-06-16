@@ -30,7 +30,7 @@ def main():
     folder_path_out = folder_path + "\\out"
 
     # parse output size
-    out_size = 1800
+    out_size = 2048
     if len(sys.argv) >= 3:
         out_size = int(sys.argv[2])
 
