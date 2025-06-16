@@ -69,6 +69,10 @@ Shader "Hidden/Raymarch Fullscreen"
     }
 
     float GetDepth(float2 uv) {
+        float2 rg = SAMPLE_TEXTURE2D(_DepthTex, sampler_DepthTex, uv).rg;
+        float depth = (rg.r * 255.0 * 256.0 + rg.g * 255.0) / 65535.0;
+        return depth * _DepthScale;
+
         float sampledHeight = SAMPLE_TEXTURE2D(_DepthTex, sampler_DepthTex, uv).r;
         return sampledHeight * _DepthScale;
     }
@@ -126,6 +130,9 @@ Shader "Hidden/Raymarch Fullscreen"
         float invRefinementSteps = 1 / float(_RefinementSteps);
 
         int firstSample = 1;
+
+        // float depth = GetDepth(GetUV(texIndex, uvOffset));
+        // return float4(depth / 30, 0, 0, 1);
 
         [loop]
         for (int j = 0; j < steps; j++)

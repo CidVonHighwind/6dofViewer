@@ -32,7 +32,7 @@ Material:
     - _EdgeOffset: 0.5
     - _EdgePass: 0
     - _Infill: 1
-    - _NumSteps: 100
+    - _NumSteps: 150
     - _Offset: 0
     - _RefinementSteps: 30
     - _StartOffset: 0

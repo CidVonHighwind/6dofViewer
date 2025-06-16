@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &295246395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &912440048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1190931013
 AudioListener:
   m_ObjectHideFlags: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190931012}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64b83675f52e51e42b0150b11695c18d, type: 3}
   m_Name: 
@@ -970,6 +970,8 @@ MonoBehaviour:
         passFoldout: 0
         m_Version: 0
         imageProvider: {fileID: 1773177542}
+        videoPlayer: {fileID: 0}
+        ffmpegPlayer: {fileID: 0}
         fullscreenMaterial: {fileID: 2100000, guid: 0633d4a4e78ee57488b769ff54b345d8, type: 2}
         raymarchMaterial: {fileID: 2100000, guid: ba641894d696dce4580d7208719d6ceb, type: 2}
         downsampleMaterial: {fileID: 2100000, guid: f318a495d9ccbc74b9f066528c0a06f4, type: 2}
@@ -977,7 +979,7 @@ MonoBehaviour:
         drawDepth: 0
         drawDepthSmall: 0
         drawEdges: 0
-        edgePass: 1
+        edgePass: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

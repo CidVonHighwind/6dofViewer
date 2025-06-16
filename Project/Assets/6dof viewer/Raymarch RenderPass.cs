@@ -6,6 +6,8 @@ using UnityEngine.Rendering.HighDefinition;
 public class RaymarchRenderPass : CustomPass
 {
     public Image_Viewer imageProvider;
+    public VLCMinimalPlayback videoPlayer;
+    public FFmpegPlayer ffmpegPlayer;
 
     public Material fullscreenMaterial;
     public Material raymarchMaterial;
@@ -91,10 +93,21 @@ public class RaymarchRenderPass : CustomPass
 
         // render the initial raymarched output with its depth map
         {
-            if (imageProvider != null && imageProvider.ColorTexture != null)
+            //if (ffmpegPlayer != null && ffmpegPlayer.ColorTexture != null)
+            //    ctx.propertyBlock.SetTexture("_MainTex", ffmpegPlayer.ColorTexture);
+            //else 
+            if (videoPlayer != null && videoPlayer.ColorTexture != null)
+                ctx.propertyBlock.SetTexture("_MainTex", videoPlayer.ColorTexture);
+            else if (imageProvider != null && imageProvider.ColorTexture != null)
                 ctx.propertyBlock.SetTexture("_MainTex", imageProvider.ColorTexture);
-            if (imageProvider != null && imageProvider.DepthTexture != null)
+
+            if (ffmpegPlayer != null && ffmpegPlayer.DepthTexture != null)
+                ctx.propertyBlock.SetTexture("_DepthTex", ffmpegPlayer.DepthTexture);
+            else if (videoPlayer != null && videoPlayer.DepthTexture != null)
+                ctx.propertyBlock.SetTexture("_DepthTex", videoPlayer.DepthTexture);
+            else if (imageProvider != null && imageProvider.DepthTexture != null)
                 ctx.propertyBlock.SetTexture("_DepthTex", imageProvider.DepthTexture);
+
             if (imageProvider != null && imageProvider.InfillTexture != null)
                 ctx.propertyBlock.SetTexture("_InfillTex", imageProvider.InfillTexture);
 
