@@ -91,7 +91,7 @@ For the depth map generation on real images I used [FoundationStereo](https://gi
 
 Due to high memory usage, I am unable to generate high-resolution depth maps and am limited to images of approximately 1500×1500 pixels.
 
-Another issue is that the model only generates a displacement map for the left image. To generate a displacement map for the right image, I had to rotate the images and switch their order (essentially simulating a 180-degree rotation of the stereo camera). This approach works to some extent, but the generated displacement maps can have differences.
+Another issue is that the model only generates a disparity map for the left image. To generate a disparity map for the right image, I had to rotate the images and switch their order (essentially simulating a 180-degree rotation of the stereo camera). This approach works to some extent, but the generated disparity maps can have differences.
 
 Additionally, this model does not work on equirectangular images (used for VR180) and is limited to a smaller field of view than 180 degrees.
 
@@ -110,8 +110,15 @@ The current approach does not handle transparent or reflective objects well, and
 
 ## Future work
 ### Depth map generation
-Currently, I am not aware of a method to generate depth maps for stereo 180-degree images. Existing models typically generate a single displacement map for the left image. A model that supports stereo images and outputs a depth map for each would be highly beneficial.
+Currently, I am not aware of a method to generate depth maps for stereo 180-degree images. Existing models typically generate a single disparity map for the left image. A model that supports stereo images and outputs a depth map for each would be highly beneficial.
 
 ### Infilling with other camera view
 
 ### Video support
+
+## Releases
+
+A build can be downloaded under Releases.
+
+The images come from https://deovr.com/channel/burari-vr?type=photos.
+
